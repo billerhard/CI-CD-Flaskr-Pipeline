@@ -3,7 +3,7 @@ import requests
 
 
 def download_repo():
-    repo_endpoint = 'https://api.github.com/repos/%s/%s/%s/' % ("billerhard","CI-CD-Flaskr-Pipeline", 'zipball')
+    repo_endpoint = 'https://api.github.com/repos/%s/%s/%s/' % ("billerhard","CNA450_flaskr", 'zipball')
     args={}
     response = requests.get(repo_endpoint,params=args)
     with open('./repo.zip', "wb") as f:
@@ -13,7 +13,7 @@ def download_repo():
 def main():
     # do stuff
     owner='billerhard'
-    repo="CI-CD-Flaskr-Pipeline"
+    repo="CNA450_flaskr"
     github_endpoint = "https://api.github.com/repos/%s/%s/commits" % (owner, repo)
     previous_time="1999-12-31T23:59:59Z"
     with open('./config','r') as f:
